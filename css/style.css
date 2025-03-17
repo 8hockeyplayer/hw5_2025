@@ -1,0 +1,167 @@
+/* Changes font and fixes background across the whole body */
+body{
+    font-family: Poppins, Serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+  }
+/* Designs the page header using flexbox */
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+
+/* Specifies a flexbox layout for the pricing containers and designs them */
+  .pricing{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
+  }
+  .card {
+    border-radius: 50px 50px 0px 0px;
+    flex: 0 1 450px;
+  }
+  /* End of this container design */
+  
+  
+ /* Nav bar design */
+  .nav_links{
+    display: flex;
+    flex-direction: column;
+  }
+
+   .nav_item a{
+    padding: 0;
+   }
+
+  a:visited{
+    color: blue;  /* Keeps links the same color */
+  }
+  /* End of Nav bar design */
+
+
+  /* Card header design */
+  .card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+
+  /* Gallery flexbox and Design */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto; 
+  }
+  
+  .gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+  }
+  /* End of Gallery Design */
+
+/* Start of design for screen sizes > 900px */
+  @media screen and (min-width: 900px){
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; 
+      flex-direction: initial;
+    }
+    .nav_links {
+      display: flex;
+    }
+    .pricing {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; 
+    }
+    .card {
+      flex: 0 1 275px; 
+    
+    }
+    body > header{
+      position: sticky;
+      width: 100%;
+      top: 0;
+    }
+      
+  }
+  /* End of > 900px design */
+
+
+  /* Logo Animation Build */
+  @keyframes logoGrow {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+    }
+
+/* This applies the animation from above */
+#logo {
+    width: 475px;
+    opacity: 1;
+    animation: logoGrow 5s ease-out;
+}
+
+/* Removes the logo animation for users with a reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+/* Start of web-page printing design */
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav_links {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+    .pricing {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end; 
+    }
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    .gallery, #gallery {
+        display: none;
+    }
+    .card ul li:nth-child(2)::after {
+        content: "👍";
+      }
+    #logo{
+        animation: none
+    }
+
+}
+/* End of the web-page print design */
