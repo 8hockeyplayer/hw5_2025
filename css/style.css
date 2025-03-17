@@ -26,11 +26,9 @@ body{
   }
   /* End of this container design */
   
-  
  /* Nav bar design */
-  .nav_links{
+  .nav_item{
     display: flex;
-    flex-direction: column;
   }
 
    .nav_item a{
@@ -77,6 +75,9 @@ body{
     }
     .nav_links {
       display: flex;
+    }
+    .nav_item a{
+        padding: 10px;
     }
     .pricing {
       display: flex;
