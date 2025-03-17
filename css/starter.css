@@ -147,7 +147,6 @@ body{
     border: solid 10px #50C7C7;
     margin: 10px;
     width: 300px;
-    /* flex: 1 1 300px; */
   }
 
   @media screen and (min-width: 900px){
@@ -162,11 +161,11 @@ body{
     }
     .pricing {
       display: flex;
-      justify-content: center; /* Centers the pricing section */
-      flex-wrap: wrap; /* Ensures responsiveness */
+      justify-content: center;
+      flex-wrap: wrap; 
     }
     .card {
-      flex: 0 1 275px; /* Each card has a base width of 275px */
+      flex: 0 1 275px; 
     
     }
     body > header{
@@ -175,11 +174,4 @@ body{
       top: 0;
     }
       
-      /* z-index: 1000;
-    }
-    
-
-    body {
-    }
-
   }
